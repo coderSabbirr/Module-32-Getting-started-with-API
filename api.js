@@ -23,6 +23,12 @@ function loadPost(){
     .then(data => console.log(data))
 }
 
-function dispalyUsers(data){
-    console.log(data);
+
+function dispalyUsers(data) {
+    const ul = document.getElementById('users');
+    for(const user of data){
+        const li = document.createElement('li')
+        li.innerText = `id:${user.id}, name:${user.name}`
+        ul.appendChild(li);
+    } 
 }
